@@ -1,0 +1,244 @@
+/* 
+Project Name: Color Wheel
+Client: Loulou
+Author: Emily Greenquist
+*/
+
+
+/******************************************
+/* SETUP                   
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+/******************************************
+/*  STYLES                   
+/*******************************************/
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body {
+     color: #000;
+     font-size: 14px;
+     line-height: 1.4;
+     font-family: Helvetica, Arial, sans-serif;
+     background-color: #e6e6e6;
+}
+
+.all, .foot {
+     position: relative;
+     width: 600px;
+     height: 600px;
+     margin-top: 20px;
+     padding-left: 20%;
+     padding-right: 20%;
+}
+.head, .foot{
+     text-align: center;
+}
+
+.foot {
+     height: 20px;
+}
+
+h1 {
+     font-family: 'Patrick Hand SC', cursive;
+     font-size: 48px;
+}
+img {
+     width: 30px;
+     height: auto;
+}
+a {
+     text-decoration: none;
+}
+
+.circle {
+     border-radius: 50%;
+     border-width: 5px;
+     width: 100px;
+     height: 100px;
+     position: absolute;
+     margin: none;
+}
+
+.redDotted,
+.orangeDotted,  
+.yellowDotted, 
+.greenDotted, 
+.blueDotted, 
+.purpleDotted
+{
+     border-style: dotted;
+     background: white;
+     z-index: 1;
+}
+.redDotted,
+.yellowDotted, 
+.blueDotted
+{
+     border-style: outset;
+     background: #cccccc;
+     cursor: pointer;
+}
+.orangeDotted,
+.greenDotted,
+.purpleDotted{
+     border:none;
+     -webkit-box-shadow: 0 0 30px 3px rgba(0, 0, 0, .3);
+}
+.redFull,
+.orangeFull,
+.yellowFull,
+.greenFull,
+.blueFull,
+.purpleFull
+{
+     border-style: solid;
+     border-color: white;
+     z-index: 5;
+}
+.redAlpha,
+.orangeAlpha,
+.yellowAlpha,
+.greenAlpha,
+.blueAlpha,
+.purpleAlpha
+{
+     border-style: solid;
+     border-color: white;
+     z-index: 10;
+}
+
+.reds{ 
+     position: absolute;
+     top: 18%;
+     left: 45%;
+}
+.redDotted {
+     border-color: rgb(204, 0, 0); 
+}
+.redDotted:hover {
+     background: rgba(204, 0, 0, 0.1);
+}
+.redFull {
+     background: rgb(204, 0, 0);
+}
+.redAlpha {
+     background: rgba(204, 0, 0, 0.5);
+}
+
+.oranges{
+     position: absolute;
+     top: 30%;
+     right: 40%;
+}
+.orangeDotted {
+     border-color: rgb(255, 101, 0);
+     background: rgba(255, 101, 0, 0.05);
+}
+.orangeFull {
+     background: rgb(255, 101, 0);
+}
+.orangeAlpha {
+     background: rgba(255, 101, 0, 0.5);
+}
+
+.yellows {
+     position: absolute;
+     bottom: 43%;
+     right: 39%;
+}
+.yellowDotted
+{
+     border-color: rgb(255, 213, 51);
+}
+.yellowDotted:hover {
+     background: rgba(255, 213, 51, 0.1);  
+}
+.yellowFull {
+     background: rgb(255, 213, 51);
+}
+.yellowAlpha
+{
+     background: rgba(255, 213, 51, 0.5);
+}
+
+.greens {
+     position: absolute;
+     bottom:26%;
+     left: 46%;
+}
+.greenDotted {
+     border-color: rgb(0, 128, 43);
+     background: rgba(0, 128, 43, 0.05);
+}
+.greenFull {
+     background: rgb(0, 128, 43);
+}
+.greenAlpha {
+     background: rgba(0, 128, 43, 0.5);
+}
+
+.blues {
+     position: absolute;
+     bottom: 43%;
+     left: 30%;
+     
+}
+.blueDotted
+{
+     border-color: rgb(0, 0, 166);
+}
+.blueDotted:hover {
+     background: rgba(0, 0, 166, 0.1);
+}
+
+.blueFull {
+     background: rgb(0, 0, 166);
+}
+.blueAlpha {
+     background: rgba(0, 0, 166, 0.5);
+}
+
+.purples {
+     position: absolute;
+     top: 30%;
+     left: 30%;
+}
+.purpleDotted {
+     border-color: rgb(102, 0, 102);
+     background: rgba(102, 0, 102, 0.05);
+}
+.purpleFull {
+     background: rgb(102, 0, 102);
+}
+.purpleAlpha {
+     background: rgba(102, 0, 102, 0.5);
+}
+
+.dropHover {
+     background: #cccccc;
+}
+.dropHover { 
+     border:none;
+     -webkit-box-shadow: 0 0 30px 3px rgba(0, 0, 0, .3);
+}
