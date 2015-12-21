@@ -1,169 +1,145 @@
-/***************
-Start
-****************/
+$(document).ready(function(){
+	/***************
+	Start
+	****************/
+	$(".head").hide();
+	$(".foot").hide();
 
-$(".head").hide();
-$(".foot").hide();
+	$(".redFull").hide();
+	$(".redAlpha").hide();
 
-$(".redFull").hide();
-$(".redAlpha").hide();
-
-$(".orangeDotted").hide();
-$(".orangeFull").hide();
-$(".orangeAlpha").hide();
-
-$(".yellowDotted").hide();
-$(".yellowFull").hide();
-$(".yellowAlpha").hide();
-
-$(".greenDotted").hide();
-$(".greenFull").hide();
-$(".greenAlpha").hide();
-
-$(".blueDotted").hide();
-$(".blueFull").hide();
-$(".blueAlpha").hide();
-
-$(".purpleDotted").hide();
-$(".purpleFull").hide();
-$(".purpleAlpha").hide();
-
-/***************
-on Clicks
-****************/
-
-$(".redDotted").on("click",function(){
-	$(".redDotted").hide();
-	$(".redFull").show();
-	$(".redAlpha").show();
-	$(".yellowDotted").show();
-});
-
-$(".yellowDotted").on("click",function(){
-	$(".yellowDotted").hide();
-	$(".yellowFull").show();
-	$(".yellowAlpha").show();
-	$(".orangeDotted").show();
-});
-
-$(".orangeDotted").on("click",function(){
 	$(".orangeDotted").hide();
-	$(".orangeFull").show();
-	$(".blueDotted").show();
-	$(".yellowAlpha").show();
-});
+	$(".orangeFull").hide();
+	$(".orangeAlpha").hide();
 
-$(".blueDotted").on("click",function(){
-	$(".blueDotted").hide();
-	$(".blueFull").show();
-	$(".blueAlpha").show();
-	$(".greenDotted").show();
-});
+	$(".yellowDotted").hide();
+	$(".yellowFull").hide();
+	$(".yellowAlpha").hide();
 
-$(".greenDotted").on("click",function(){
 	$(".greenDotted").hide();
-	$(".greenFull").show();
-	$(".greenAlpha").show();
-	$(".purpleDotted").show();
-	$(".blueAlpha").show();
-	$(".redAlpha").show();
+	$(".greenFull").hide();
+	$(".greenAlpha").hide();
 
-});
+	$(".blueDotted").hide();
+	$(".blueFull").hide();
+	$(".blueAlpha").hide();
 
-$(".purpleDotted").on("click",function(){
 	$(".purpleDotted").hide();
-	$(".purpleFull").show();
-	$(".purpleAlpha").show();
-	$(".redAlpha").show();
-	$(".blueAlpha").show();
-	$(".orangeAlpha").show();
-	$(".yellowAlpha").show();
-	$(".head").show();
-	$(".foot").show();
-});
+	$(".purpleFull").hide();
+	$(".purpleAlpha").hide();
 
-/***************
-Draggables
-****************/
+	/***************
+	on Clicks
+	****************/
 
-$(function(){
-    $(".js-draggable").draggable({
-    stack:".js-draggable",
-    });
-});
+	$(".redDotted").on("click",function(){
+		$(".redDotted").hide();
+		$(".redFull").show();
+		$(".redAlpha").show();
+		$(".yellowDotted").show();
+	});
 
-/***************
-Droppables
-****************/
+	$(".yellowDotted").on("click",function(){
+		$(".yellowDotted").hide();
+		$(".yellowFull").show();
+		$(".yellowAlpha").show();
+		$(".orangeDotted").show();
+	});
 
-//counting ifs
+	$(".blueDotted").on("click",function(){
+		$(".blueDotted").hide();
+		$(".blueFull").show();
+		$(".blueAlpha").show();
+		$(".greenDotted").show();
+		$(".yellowAlpha").show();
+	});
 
-/*$(document).ready(function(){
-   
-    var counter=0;
+	/*
+	$(".orangeDotted").on("click",function(){
+		// $(".orangeDotted").hide();
+		$(".orangeFull").show();
+		$(".blueDotted").show();
+	});
+	*/
 
-    function check()
-    {
-    	if(counter == 4){ 
-			$(".orangeDotted").hide();
+	/*
+	$(".greenDotted").on("click",function(){
+		// $(".greenDotted").hide();
+		$(".greenFull").show();
+		$(".greenAlpha").show();
+		$(".purpleDotted").show();
+		$(".blueAlpha").show();
+		$(".redAlpha").show();
+	});
+	*/
+
+	/*
+	$(".purpleDotted").on("click",function(){
+		// $(".purpleDotted").hide();
+		$(".purpleFull").show();
+		$(".purpleAlpha").show();
+		$(".redAlpha").show();
+		$(".blueAlpha").show();
+		$(".orangeAlpha").show();
+		$(".yellowAlpha").show();
+		$(".head").show();
+		$(".foot").show();
+	});
+	*/
+
+	var counter=0;
+
+  function check()
+  {
+  	if(counter == 4){ 
+			//$(".orangeDotted").hide();
 			$(".orangeFull").show();
 			$(".blueDotted").show();
-			$(".yellowAlpha").show();
-    	}else if(counter == 6){
+  	}else if(counter == 6){
 			$(".greenDotted").hide();
 			$(".greenFull").show();
 			$(".greenAlpha").show();
 			$(".purpleDotted").show();
 			$(".blueAlpha").show();
 			$(".redAlpha").show();
-    	}else if(counter > 6){
-    		$(".purpleDotted").hide();
+  	}else if(counter > 6){
+			$(".purpleDotted").hide();
 			$(".purpleFull").show();
 			$(".purpleAlpha").show();
 			$(".redAlpha").show();
 			$(".blueAlpha").show();
 			$(".orangeAlpha").show();
 			$(".yellowAlpha").show();
+			$(".greenAlpha").show();
 			$(".head").show();
 			$(".foot").show();
-    	}else{
-    		//do nothing
-    	}
-    };
-    function count()  
-    {
-    	counter = counter + 1    
-    }
+  	}else{
+  		//do nothing
+  	}
+  };
+  
+  function count()  
+  {
+  	counter = counter + 1;
+  	console.log("The counter value is: " + counter);   
+  }
+
+  $(".js-draggable").draggable({
+    stack:".js-draggable"
+  });
+
+  $(".drop").droppable(
+	{		
+		hoverClass: "dropHover",
+	    drop: function(event, ui) 
+	    {
+	      // after the draggable is droped, 
+	      // hides it with a hide() effect
+	    	ui.draggable.hide(1000);
+	    	count();
+	    	check(); 
+	    }
+	});
+
+	console.log(counter);
 });
-*/
-
-// sets droppable
-
-$(".drop").droppable(
-{
-    drop: function(event, ui) 
-    {
-      // after the draggable is droped, hides it with a hide() effect
-    	ui.draggable.hide(1000);
-    	//count();
-    	//check(); 
-    }
-});
-
-$(".drop").droppable({
-	hoverClass: "dropHover",
-});
-
-//$(".drop .js-draggable").length;
-
-//console.log(counter);
-
-/********************
-QUESTION : As per the above, I am trying to add a counter, so that each time a draggable div is dropped, + 1 is added to the counter. When the counter reaches certain values, certain divs are hideden & shown, but what I have set up isn't working. 
-
-It saying Counter and Count are not defined. I'm not sue what to do with that info from the console.
-
-I've been attempting to repurpose code from here: 
-
-http://stackoverflow.com/questions/28232376/how-to-count-the-draggable-elements-in-in-a-droppable-area
-*********************/
