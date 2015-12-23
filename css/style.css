@@ -34,12 +34,12 @@ Author: Emily Greenquist
   box-sizing: inherit;
 }
 
-
 body {
      color: #000;
      font-size: 14px;
+     font-family: 'Poiret One', cursive; 
+     font-weight: 400;
      line-height: 1.4;
-     font-family: Helvetica, Arial, sans-serif;
      background-color: #e6e6e6;
 }
 
@@ -58,9 +58,16 @@ body {
 .foot {
      height: 20px;
 }
+hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
 
 h1 {
-     font-family: 'Patrick Hand SC', cursive;
+     font-family: 'Poiret One', cursive;
+     font-weight: 400;
      font-size: 48px;
 }
 img {
@@ -103,8 +110,32 @@ a {
 .greenDotted,
 .purpleDotted{
      border:none;
-     -webkit-box-shadow: 0 0 30px 3px rgba(0, 0, 0, .3);
+     z-index: 1;
+     /*-webkit-box-shadow: 0 0 30px 3px rgba(0, 0, 0, .3);
+  */
+     box-shadow: inset 0 0 5px rgba(0,0,255,1), 5px 5px 5px #f00;
+     -webkit-animation: blackglow 1000ms ease-in-out infinite alternate; }
+     @-webkit-keyframes blackglow {
+          0% {
+          box-shadow: inset 0 0 10px rgba(0,0,0,.8), 0 2px 0 rgba(255, 255, 255,.1), inset 0 3px 0 rgba(0, 0, 0,.1), 0 -1px 0 rgba(0,0,0,.1);
+          }     
+          100% {
+          box-shadow: inset 0 0 30px rgba(0,0,0,.8), 0 2px 0 rgba(255, 255, 255,.1), inset 0 3px 0 rgba(0, 0, 0,.1), 0 -1px 0 rgba(0,0,0,.1);
+    }
 }
+.redDotted:hover,
+.yellowDotted:hover,
+.blueDotted:hover 
+{
+    box-shadow: 10px 10px 5px gray;
+}
+.redDotted:active,
+.yellowDotted:active,
+.blueDotted:active 
+{
+    box-shadow: 2px 2px 2px gray;
+}
+
 .redFull,
 .orangeFull,
 .yellowFull,
@@ -126,6 +157,8 @@ a {
      border-style: solid;
      border-color: white;
      z-index: 10;
+     width: 110px;
+     height: 110px;
 }
 
 .reds{ 
@@ -134,10 +167,11 @@ a {
      left: 45%;
 }
 .redDotted {
-     border-color: rgb(204, 0, 0); 
+     /*border-color: rgb(204, 0, 0); */
 }
 .redDotted:hover {
-     background: rgba(204, 0, 0, 0.1);
+     background: rgba(204, 0, 0, 0.35);
+
 }
 .redFull {
      background: rgb(204, 0, 0);
@@ -169,10 +203,10 @@ a {
 }
 .yellowDotted
 {
-     border-color: rgb(255, 213, 51);
+     /*border-color: rgb(255, 213, 51);*/
 }
 .yellowDotted:hover {
-     background: rgba(255, 213, 51, 0.1);  
+     background: rgba(255, 213, 51, 0.35);  
 }
 .yellowFull {
      background: rgb(255, 213, 51);
@@ -201,15 +235,14 @@ a {
 .blues {
      position: absolute;
      bottom: 43%;
-     left: 30%;
-     
+     left: 30%;     
 }
 .blueDotted
 {
-     border-color: rgb(0, 0, 166);
+     /*border-color: rgb(0, 0, 166);*/
 }
 .blueDotted:hover {
-     background: rgba(0, 0, 166, 0.1);
+     background: rgba(0, 0, 166, 0.35);
 }
 
 .blueFull {

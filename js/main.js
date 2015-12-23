@@ -35,7 +35,6 @@ $(document).ready(function(){
 	$(".redDotted").on("click",function(){
 		$(".redDotted").hide();
 		$(".redFull").show();
-		$(".redAlpha").show();
 		$(".yellowDotted").show();
 	});
 
@@ -43,6 +42,7 @@ $(document).ready(function(){
 		$(".yellowDotted").hide();
 		$(".yellowFull").show();
 		$(".yellowAlpha").show();
+		$(".redAlpha").show();
 		$(".orangeDotted").show();
 	});
 
@@ -52,6 +52,10 @@ $(document).ready(function(){
 		$(".blueAlpha").show();
 		$(".greenDotted").show();
 		$(".yellowAlpha").show();
+	});
+
+	$(".playAgain").on("click",function(){
+		location.reload();
 	});
 
 	/*
@@ -89,20 +93,19 @@ $(document).ready(function(){
 
 	var counter=0;
 
-  function check()
-  {
-  	if(counter == 4){ 
-			//$(".orangeDotted").hide();
+  	function check()
+  	{
+  		if(counter == 2){ 
+			$(".orangeDotted").hide();
 			$(".orangeFull").show();
 			$(".blueDotted").show();
-  	}else if(counter == 6){
+  		}else if(counter == 4){
 			$(".greenDotted").hide();
 			$(".greenFull").show();
-			$(".greenAlpha").show();
 			$(".purpleDotted").show();
-			$(".blueAlpha").show();
 			$(".redAlpha").show();
-  	}else if(counter > 6){
+			$(".blueAlpha").show();
+  		}else if(counter == 6){
 			$(".purpleDotted").hide();
 			$(".purpleFull").show();
 			$(".purpleAlpha").show();
@@ -113,33 +116,33 @@ $(document).ready(function(){
 			$(".greenAlpha").show();
 			$(".head").show();
 			$(".foot").show();
-  	}else{
-  		//do nothing
-  	}
-  };
+  		}else{
+  			//do nothing
+  		}
+  	};
   
-  function count()  
-  {
-  	counter = counter + 1;
-  	console.log("The counter value is: " + counter);   
-  }
+  	function count()  
+  	{
+  		counter = counter + 1;
+  		//console.log("The counter value is: " + counter);   
+  	}
 
-  $(".js-draggable").draggable({
-    stack:".js-draggable"
-  });
+  	$(".js-draggable").draggable({
+    	stack:".js-draggable"
+  	});
 
-  $(".drop").droppable(
+  	$(".drop").droppable(
 	{		
 		hoverClass: "dropHover",
 	    drop: function(event, ui) 
 	    {
 	      // after the draggable is droped, 
 	      // hides it with a hide() effect
-	    	ui.draggable.hide(1000);
-	    	count();
-	    	check(); 
+	    	ui.draggable.hide(500,function(){
+	    		count();
+	    		check(); 
+	    	});
 	    }
 	});
 
-	console.log(counter);
 });
